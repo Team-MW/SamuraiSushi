@@ -12,8 +12,8 @@
 
   <style>
     @font-face {
-      font-family: "Big Samurai";
-      src: url("assets/Big Samurai.ttf") format("truetype");
+      font-family: "Samurai Logo";
+      src: url("assets/go3v2.ttf") format("truetype");
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -156,7 +156,7 @@
     }
 
     .brand-name {
-      font-family: "Big Samurai", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: clamp(80px, 11vw, 124px);
       letter-spacing: 0.35em;
       text-transform: uppercase;
@@ -272,6 +272,32 @@
       color: var(--text-muted);
     }
 
+    /* ----------- SECTION NOS PLATS (PLEIN FOND) ----------- */
+
+    #plats {
+      max-width: 1200px;
+      margin: 0 auto 72px;
+      padding: 60px 0 30px;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    #plats h2 {
+      letter-spacing: 0.32em;
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    #plats h2::after {
+      left: 0;
+    }
+
+    #plats > p {
+      max-width: 900px;
+    }
+
     .section-grid {
       position: relative;
       display: grid;
@@ -286,12 +312,527 @@
       text-transform: uppercase;
       margin-bottom: 8px;
       color: #ffffff;
+      transition: color 0.18s ease, transform 0.18s ease;
     }
 
     .section-block p {
       letter-spacing: 0.08em;
       text-transform: none;
       font-size: 13px;
+      transition: color 0.18s ease, opacity 0.18s ease;
+    }
+
+    #plats .section-grid {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    #plats .section-block {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .plats-image {
+      width: 100%;
+      height: 150px;
+      border-radius: 14px;
+      object-fit: cover;
+      margin-bottom: 12px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.9);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #plats .section-block:hover .plats-image {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 22px 60px rgba(0,0,0,1);
+    }
+
+    #plats .section-block:hover .section-subtitle {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* ----------- SECTION SUSHIS (BANDEAU IMAGE + TEXTE) ----------- */
+
+    .sushis-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 40px 0 8px;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .sushis-layout {
+      display: flex;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .sushis-image-wrap {
+      flex: 1.4;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(0,0,0,0.8);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .sushis-image {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.22s ease;
+    }
+
+    .sushis-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding-right: 10px;
+    }
+
+    .sushis-title {
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .sushis-content p {
+      text-transform: none;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .sushis-cta {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.9);
+      text-align: center;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
+    }
+
+    .sushis-cta:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 18px 40px rgba(0,0,0,1);
+      transform: translateY(-1px);
+    }
+
+    .sushis-image-wrap:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,1),
+        0 0 0 1px rgba(255,255,255,0.1);
+      border-color: #ffffff;
+    }
+
+    .sushis-image-wrap:hover .sushis-image {
+      transform: scale(1.04);
+    }
+
+    /* ----------- SECTION WOK (TEXTE GAUCHE / IMAGE DROITE) ----------- */
+
+    .wok-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 10px 0 8px;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .wok-layout {
+      display: flex;
+      gap: 32px;
+      align-items: stretch;
+      flex-direction: row-reverse;
+    }
+
+    .wok-image-wrap {
+      flex: 1.4;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(0,0,0,0.8);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .wok-image {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.22s ease;
+    }
+
+    .wok-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding-left: 10px;
+    }
+
+    .wok-title {
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .wok-content p {
+      text-transform: none;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .wok-cta {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.9);
+      text-align: center;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
+    }
+
+    .wok-cta:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 18px 40px rgba(0,0,0,1);
+      transform: translateY(-1px);
+    }
+
+    .wok-image-wrap:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,1),
+        0 0 0 1px rgba(255,255,255,0.1);
+      border-color: #ffffff;
+    }
+
+    .wok-image-wrap:hover .wok-image {
+      transform: scale(1.04);
+    }
+
+    /* ----------- SECTION HEALTHY (ENTRÉES SAINES) ----------- */
+
+    .healthy-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 10px 0 8px;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .healthy-layout {
+      display: flex;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .healthy-image-wrap {
+      flex: 1.4;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(0,0,0,0.8);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .healthy-image {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.22s ease;
+    }
+
+    .healthy-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding-right: 10px;
+    }
+
+    .healthy-title {
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .healthy-content p {
+      text-transform: none;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .healthy-cta {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.9);
+      text-align: center;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
+    }
+
+    .healthy-cta:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 18px 40px rgba(0,0,0,1);
+      transform: translateY(-1px);
+    }
+
+    .healthy-image-wrap:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,1),
+        0 0 0 1px rgba(255,255,255,0.1);
+      border-color: #ffffff;
+    }
+
+    .healthy-image-wrap:hover .healthy-image {
+      transform: scale(1.04);
+    }
+
+    /* ----------- SECTION LIVRAISON ----------- */
+
+    .delivery-section {
+      max-width: 1200px;
+      margin: 0 auto 70px;
+      padding: 10px 0 8px;
+    }
+
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px 38px;
+      align-items: stretch;
+    }
+
+    .delivery-card {
+      position: relative;
+      padding: 22px 24px 24px;
+      border-radius: 18px;
+      background: #202020;
+      border: 3px solid var(--accent);
+      box-shadow:
+        0 20px 55px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .delivery-card--highlight {
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.95));
+    }
+
+    .delivery-card-title {
+      font-size: 18px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .delivery-text {
+      text-transform: none;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .delivery-note {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .delivery-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+    }
+
+    .delivery-scooter {
+      font-size: 30px;
+    }
+
+    .delivery-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,1),
+        0 0 0 1px rgba(255,255,255,0.12);
+      border-color: #ffffff;
+      background: radial-gradient(circle at top left, rgba(255,59,63,0.19), #202020 55%);
+    }
+
+    /* ----------- MENU CARTE ----------- */
+
+    .menu-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px 40px;
+    }
+
+    .menu-column {
+      border-left: 1px solid rgba(255,255,255,0.16);
+      padding-left: 18px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.2s ease;
+    }
+
+    .menu-item:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .menu-item-title {
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .menu-item-desc {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: none;
+      color: #ffffff;
+    }
+
+    .menu-price {
+      background: var(--accent);
+      color: #ffffff;
+      min-width: 74px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.85);
+      align-self: center;
+      transition: background 0.18s ease, box-shadow 0.2s ease, transform 0.16s ease;
+    }
+
+    .menu-item:hover {
+      background: rgba(255,255,255,0.03);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.8);
+    }
+
+    .menu-item:hover .menu-price {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6b5e 50%, #ff3b3f 100%);
+      transform: translateX(4px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.95);
+    }
+
+    .flyer-wrapper {
+      position: relative;
+      margin-top: 26px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #111;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+    }
+
+    .flyer-embed {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    .flyer-link {
+      display: block;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--accent);
+      text-decoration: none;
+      background: rgba(0,0,0,0.9);
+    }
+
+    .flyer-link:hover {
+      color: #ffffff;
+      background: var(--accent);
     }
 
     footer {
@@ -357,6 +898,18 @@
       .nav-box {
         transform: scale(0.9);
         transform-origin: top right;
+      }
+
+      .sushis-layout,
+      .wok-layout,
+      .healthy-layout {
+        flex-direction: column;
+      }
+
+      .sushis-image-wrap,
+      .wok-image-wrap,
+      .healthy-image-wrap {
+        flex: auto;
       }
     }
 
@@ -437,6 +990,75 @@
 
   <!-- CONTENU -->
   <main>
+    <section id="sushis" class="sushis-section">
+      <div class="sushis-layout">
+        <div class="sushis-image-wrap">
+          <img src="assets/final.jpg" alt="Assortiment de sushis sur ardoise" class="sushis-image">
+        </div>
+        <div class="sushis-content">
+          <h2 class="sushis-title">Sushis</h2>
+          <p>
+            Des sushis traditionnels respectant uses et coutumes d’un plat japonais emblématique vous sont servis !
+          </p>
+          <p>
+            Nos sushis sont faits sur ordre de commande et vous garantissent une expérience culinaire comme nulle
+            part ailleurs.
+          </p>
+          <p>
+            Différentes combinaisons de garnitures vous sont proposées et accompagnent parfaitement le poisson frais.
+          </p>
+          <a href="#carte" class="sushis-cta">Voir nos sushis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="woks" class="wok-section">
+      <div class="wok-layout">
+        <div class="wok-image-wrap">
+          <img src="wock.jpg" alt="Wok de nouilles et légumes" class="wok-image">
+        </div>
+        <div class="wok-content">
+          <h2 class="wok-title">Wok</h2>
+          <p>
+            Venez prendre goût à de véritables woks préparés sur commande !
+          </p>
+          <p>
+            Des recettes variées et incroyablement délicieuses vous sont proposées par de vrais professionnels qui
+            ont pris le temps de les peaufiner au fil des années.
+          </p>
+          <p>
+            Laissez-vous surprendre par des combinaisons de légumes, de viandes et de sauces travaillées au wok
+            pour un résultat fumant et généreux.
+          </p>
+          <a href="#carte" class="wok-cta">Voir nos woks</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="healthy" class="healthy-section">
+      <div class="healthy-layout">
+        <div class="healthy-image-wrap">
+          <img src="assets/healthy.jpg" alt="Salade healthy et entrées fraîches" class="healthy-image">
+        </div>
+        <div class="healthy-content">
+          <h2 class="healthy-title">Healthy</h2>
+          <p>
+            Au-delà d’un mélange des saveurs, on vous propose notre gamme d’entrées conçues pour vous faire
+            plaisir sainement.
+          </p>
+          <p>
+            Des entrées atypiques de notre concept vous attendent : brochettes, tartares de saumon et salade
+            du chef préparée minute.
+          </p>
+          <p>
+            Authentique, saine et généreuse, cette sélection vous permet de profiter d’un délicieux repas sans
+            faire exploser le compteur de calories.
+          </p>
+          <a href="#carte" class="healthy-cta">Voir nos entrées</a>
+        </div>
+      </div>
+    </section>
+
     <section id="plats">
       <h2>Nos plats</h2>
       <p>
@@ -445,6 +1067,7 @@
       </p>
       <div class="section-grid">
         <div class="section-block">
+          <img src="assets/final.jpg" alt="Assortiment de sushis et makis" class="plats-image">
           <h3 class="section-subtitle">Sushis &amp; Makis</h3>
           <p>
             Plateaux à partager, assortiments classiques ou créations maison avec saumon label rouge,
@@ -452,6 +1075,7 @@
           </p>
         </div>
         <div class="section-block">
+          <img src="assets/final.jpg" alt="Grillades japonaises et yakitoris" class="plats-image">
           <h3 class="section-subtitle">Grillades &amp; Yakitoris</h3>
           <p>
             Brochettes de bœuf, poulet teriyaki, saumon mariné et légumes grillés, à accompagner de riz
@@ -459,6 +1083,7 @@
           </p>
         </div>
         <div class="section-block">
+          <img src="assets/final.jpg" alt="Menus dégustation japonais" class="plats-image">
           <h3 class="section-subtitle">Menus dégustation</h3>
           <p>
             Formules pensées pour découvrir le meilleur de la maison : entrée, assortiment de pièces,
@@ -468,33 +1093,150 @@
       </div>
     </section>
 
+    <section id="livraison" class="delivery-section">
+      <div class="delivery-grid">
+        <article class="delivery-card">
+          <h3 class="delivery-card-title">Horaires d’ouverture</h3>
+          <p class="delivery-text">
+            Lundi, mercredi &amp; jeudi : 12h – 15h &amp; 18h30 – 00h
+          </p>
+          <p class="delivery-text">
+            Mardi : <span class="delivery-note">fermé</span>
+          </p>
+          <p class="delivery-text">
+            Vendredi : 18h30 – 00h
+          </p>
+          <p class="delivery-text">
+            Samedi : 12h – 15h &amp; 18h30 – 00h
+          </p>
+          <p class="delivery-text">
+            Dimanche : 18h30 – 00h
+          </p>
+        </article>
+        <article class="delivery-card delivery-card--highlight">
+          <div class="delivery-icon" aria-hidden="true">
+            <span class="delivery-scooter">🛵</span>
+          </div>
+          <h3 class="delivery-card-title">Livraison rapide sur Toulouse</h3>
+          <p class="delivery-text">
+            Nos livreurs en scooter partent de nos deux points de vente pour livrer rapidement dans Toulouse
+            et les environs proches.
+          </p>
+          <p class="delivery-text">
+            Commandes à emporter ou en livraison selon ta zone : idéal pour profiter de Samurai à la maison
+            ou au bureau.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section id="carte">
       <h2>La carte</h2>
       <p>
-        Une carte courte, lisible, organisée par envies : menus midi, formules soir, plateaux à partager
-        et créations signatures du chef.
+        California rolls et créations signatures, servis par 6 ou 8 pièces, avec des recettes
+        croustillantes et généreuses.
       </p>
-      <div class="section-grid">
-        <div class="section-block">
-          <h3 class="section-subtitle">Formules midi</h3>
-          <p>
-            Menus rapides et généreux pour la pause déjeuner, disponibles sur place ou à emporter, avec
-            boisson et accompagnement.
-          </p>
+      <div class="menu-grid">
+        <div class="menu-column">
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California saumon avocat cheese x6</h3>
+              <p class="menu-item-desc">Oignon frit autour.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California surimi avocat cheese x6</h3>
+              <p class="menu-item-desc">Tobiko autour.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California crevette tempura avocat cheese x6</h3>
+              <p class="menu-item-desc">Oignon frit autour.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California thon cuit mayo avocat x6</h3>
+              <p class="menu-item-desc">Graine de sésame autour.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California poulet épicé cheese x6</h3>
+              <p class="menu-item-desc">Sans algue.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">California saumon cuit cheese</h3>
+              <p class="menu-item-desc">Sans algue.</p>
+            </div>
+            <span class="menu-price">7,50 €</span>
+          </div>
         </div>
-        <div class="section-block">
-          <h3 class="section-subtitle">Soir &amp; week-end</h3>
-          <p>
-            Assortiments plus gourmands, plateaux à partager et suggestions du chef pour accompagner vos
-            soirées entre amis ou en famille.
-          </p>
-        </div>
-        <div class="section-block">
-          <h3 class="section-subtitle">À emporter &amp; livraison</h3>
-          <p>
-            Commande par téléphone ou directement sur place, avec un conditionnement pensé pour garder
-            toute la fraîcheur des produits.
-          </p>
+
+        <div class="menu-column">
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Cheyenne x8</h3>
+              <p class="menu-item-desc">Saumon cheese recouvert d’avocat.</p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Dragon x8</h3>
+              <p class="menu-item-desc">Saumon cheese recouvert d’avocat et de saumon flambé.</p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Cobra x8</h3>
+              <p class="menu-item-desc">Crevette tempura cheese recouvert de saumon flambé.</p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Boston</h3>
+              <p class="menu-item-desc">Poulet cheese recouvert de cheddar snacké.</p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Siphon</h3>
+              <p class="menu-item-desc">Avocat cheese recouvert de surimi saumon et tobiko.</p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-text">
+              <h3 class="menu-item-title">Le Dragon Eyes</h3>
+              <p class="menu-item-desc">
+                Big roll frit autour, saumon cuit sur les contours et surimi avocat cheese à l’intérieur.
+              </p>
+            </div>
+            <span class="menu-price">9,00 €</span>
+          </div>
         </div>
       </div>
     </section>
@@ -527,6 +1269,18 @@
             Pour les groupes et événements, contacte-nous la veille pour une organisation sur mesure.
           </p>
         </div>
+      </div>
+
+      <div class="flyer-wrapper">
+        <object class="flyer-embed" data="assets/MiniFlyer.pdf" type="application/pdf">
+          <p>
+            Ton navigateur ne peut pas afficher le flyer.
+            <a href="assets/MiniFlyer.pdf" target="_blank" rel="noopener">Ouvrir le flyer en plein écran</a>
+          </p>
+        </object>
+        <a href="assets/MiniFlyer.pdf" target="_blank" rel="noopener" class="flyer-link">
+          Voir le flyer complet (PDF)
+        </a>
       </div>
     </section>
   </main>
