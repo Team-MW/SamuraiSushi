@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Samurai - Sushi & Grill</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Police style "Samurai" pour toute la page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: "Big Samurai";
+      src: url("assets/Big Samurai.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #ff3b3f;       /* rouge plus vif */
+      --accent-dark: #c51e25;  /* rouge foncé pour le hover */
+      --bg-dark: #08070a;
+      --bg-elevated: rgba(8,7,10,0.94);
+      --text-light: #ffffff;
+      --text-muted: rgba(255,255,255,0.7);
+      --nav-bg: rgba(8,7,10,0.9);
+      --nav-border: #ff3b3f;
+    }
+
+    body {
+      font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #18121f 0, #050308 40%, #000 100%);
+      color: var(--text-light);
+      min-height: 100vh;
+      letter-spacing: 0.16em;
+    }
+
+    /* ----------- HERO ----------- */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background-image: url("assets/final.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 5vw 40px;
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    /* ----------- NAVBAR ----------- */
+
+    .navbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(16px);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(255,59,63,0.9);
+    }
+
+    .nav-box {
+      display: flex;
+      align-items: stretch;
+      background: var(--nav-bg);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-link,
+    .btn-nav-main {
+      padding: 16px 38px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 13px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      color: rgba(255,255,255,0.9);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(255,59,63,0.6);
+    }
+
+    .btn-nav-main {
+      background: var(--accent);
+      color: var(--text-light);
+      border-left: 1px solid rgba(255,255,255,0.2);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .btn-nav-main:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(255,59,63,0.8);
+    }
+
+    /* ----------- HERO CONTENT ----------- */
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 6vh;
+      max-width: 600px;
+    }
+
+    .brand-name {
+      font-family: "Big Samurai", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(80px, 11vw, 124px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow:
+        0 0 16px rgba(0,0,0,0.85),
+        0 12px 26px rgba(0,0,0,0.95);
+    }
+
+    .tagline {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      padding-top: 10px;
+    }
+
+    .tagline-title {
+      font-size: clamp(24px, 3.3vw, 30px);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    .tagline-title span {
+      background: rgba(0,0,0,0.7);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.65);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .btn-main {
+      padding: 14px 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      font-size: 13px;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6b5e 40%, #ff3b3f 100%);
+      color: #fff;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.08),
+        0 14px 30px rgba(0,0,0,0.7),
+        0 0 25px rgba(255,59,63,0.9);
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-main:hover {
+      background: linear-gradient(135deg, var(--accent-dark) 0%, #ff3b3f 50%, #ff8a6b 100%);
+      transform: translateY(-1px) scale(1.02);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.9),
+        0 0 35px rgba(255,59,63,1);
+    }
+
+    /* ----------- MAIN SECTIONS ----------- */
+
+    main {
+      background: radial-gradient(circle at top, rgba(255,59,63,0.16) 0, #050308 35%, #000 100%);
+      color: #eee;
+      padding: 56px 5vw 96px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 0 auto 56px;
+      padding: 28px 28px 30px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(0,0,0,0.9));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 22px 60px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,59,63,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    section h2 {
+      position: relative;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-size: 30px;
+      color: var(--accent);
+    }
+
+    section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 80px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    section p {
+      position: relative;
+      opacity: 1;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .section-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px 32px;
+      margin-top: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .section-block p {
+      letter-spacing: 0.08em;
+      text-transform: none;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #050308;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 28px 5vw 36px;
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px 32px;
+    }
+
+    .footer-title {
+      font-size: 16px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .footer-brand p {
+      text-transform: none;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+    }
+
+    .footer-info p {
+      text-transform: none;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+    }
+
+    .footer-info span {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ----------- RESPONSIVE ----------- */
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 16px 5vw 32px;
+      }
+
+      .nav-box {
+        transform: scale(0.9);
+        transform-origin: top right;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .logo-mark {
+        align-self: flex-start;
+      }
+
+      .nav-box {
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+      }
+
+      .nav-link,
+      .btn-nav-main {
+        padding: 12px 8px;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .hero-inner {
+        margin-top: 9vh;
+      }
+
+      .btn-main {
+        width: auto;
+      }
+    }
+
+
+    @media (max-width: 480px) {
+      .brand-name {
+        letter-spacing: 0.18em;
+      }
+
+      main {
+        padding-inline: 6vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header id="accueil" class="hero">
+    <nav class="navbar">
+      <div class="logo-mark">
+        <span class="logo-dot"></span>
+        <span>Samurai Sushi</span>
+      </div>
+      <div class="nav-box">
+        <a href="#accueil" class="nav-link active">Accueil</a>
+        <a href="#plats" class="nav-link">Plats</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#carte" class="btn-nav-main">Voir la carte</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <h1 class="brand-name">Samurai</h1>
+
+      <div class="tagline">
+        <h2 class="tagline-title">
+          <span>Sushi &amp; Grill</span>
+        </h2>
+        <a href="#carte" class="btn-main">Voir la carte</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENU -->
+  <main>
+    <section id="plats">
+      <h2>Nos plats</h2>
+      <p>
+        Une sélection de sushis, makis et grillades japonaises préparés à la minute, avec des produits
+        frais et une découpe précise dans l’esprit des bars à sushis de Tokyo.
+      </p>
+      <div class="section-grid">
+        <div class="section-block">
+          <h3 class="section-subtitle">Sushis &amp; Makis</h3>
+          <p>
+            Plateaux à partager, assortiments classiques ou créations maison avec saumon label rouge,
+            thon, crevettes et options végétariennes.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Grillades &amp; Yakitoris</h3>
+          <p>
+            Brochettes de bœuf, poulet teriyaki, saumon mariné et légumes grillés, à accompagner de riz
+            parfumé ou de nouilles sautées.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Menus dégustation</h3>
+          <p>
+            Formules pensées pour découvrir le meilleur de la maison : entrée, assortiment de pièces,
+            dessert et boisson.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="carte">
+      <h2>La carte</h2>
+      <p>
+        Une carte courte, lisible, organisée par envies : menus midi, formules soir, plateaux à partager
+        et créations signatures du chef.
+      </p>
+      <div class="section-grid">
+        <div class="section-block">
+          <h3 class="section-subtitle">Formules midi</h3>
+          <p>
+            Menus rapides et généreux pour la pause déjeuner, disponibles sur place ou à emporter, avec
+            boisson et accompagnement.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Soir &amp; week-end</h3>
+          <p>
+            Assortiments plus gourmands, plateaux à partager et suggestions du chef pour accompagner vos
+            soirées entre amis ou en famille.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">À emporter &amp; livraison</h3>
+          <p>
+            Commande par téléphone ou directement sur place, avec un conditionnement pensé pour garder
+            toute la fraîcheur des produits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Réserve ta table ou commande à emporter en quelques instants : l’équipe Samurai te répond tous les
+        jours, midi et soir.
+      </p>
+      <div class="section-grid">
+        <div class="section-block">
+          <h3 class="section-subtitle">Adresse</h3>
+          <p>
+            12, rue du Sakura — 75000 Paris<br>
+            Quartier animé, accès métro et parking à proximité.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Horaires</h3>
+          <p>
+            Lundi au dimanche : 11h30 – 14h30 &amp; 18h30 – 23h00.<br>
+            Service continu le week-end et veilles de jours fériés.
+          </p>
+        </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Réservations</h3>
+          <p>
+            Téléphone : 01 23 45 67 89<br>
+            Pour les groupes et événements, contacte-nous la veille pour une organisation sur mesure.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 class="footer-title">Samurai — Sushi &amp; Grill</h3>
+        <p>
+          Cuisine japonaise moderne, sur place &amp; à emporter, dans une ambiance inspirée des bars à sushis
+          de Tokyo.
+        </p>
+      </div>
+      <div class="footer-info">
+        <p><span>Adresse :</span> 12, rue du Sakura — 75000 Paris</p>
+        <p><span>Téléphone :</span> 01 23 45 67 89</p>
+        <p><span>Email :</span> contact@samuraisushi.fr</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Samurai Sushi. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Scroll fluide
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 10,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    // Mise à jour de l’onglet actif au scroll
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = [...document.querySelectorAll("header, main section")];
+
+    const setActiveLink = () => {
+      const scrollPos = window.scrollY + 120;
+      let currentId = "accueil";
+
+      sections.forEach(section => {
+        if (scrollPos >= section.offsetTop) {
+          currentId = section.id || currentId;
+        }
+      });
+
+      navLinks.forEach(link => {
+        const hrefId = link.getAttribute("href").substring(1);
+        if (hrefId === currentId) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", setActiveLink);
+    window.addEventListener("load", setActiveLink);
+  </script>
+</body>
+</html>
