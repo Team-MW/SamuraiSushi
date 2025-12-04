@@ -705,15 +705,10 @@
     }
 
     .delivery-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 999px;
-      background: #ffffff;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: 10px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
     }
 
     .delivery-scooter {
@@ -888,6 +883,24 @@
       color: var(--text-muted);
     }
 
+    .footer-madeby {
+      margin-top: 6px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .footer-madeby a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-madeby a:hover {
+      text-decoration: underline;
+    }
+
     /* ----------- RESPONSIVE ----------- */
 
     @media (max-width: 900px) {
@@ -910,6 +923,14 @@
       .wok-image-wrap,
       .healthy-image-wrap {
         flex: auto;
+      }
+
+      .delivery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -944,6 +965,10 @@
 
       .btn-main {
         width: auto;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1301,6 +1326,10 @@
       </div>
     </div>
     <p class="footer-bottom">© 2025 Samurai Sushi. Tous droits réservés.</p>
+    <p class="footer-madeby">
+      Codé par
+      <a href="https://microdidact.com/" target="_blank" rel="noopener">Microdidact</a>
+    </p>
   </footer>
 
   <script>
