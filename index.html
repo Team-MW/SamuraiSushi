@@ -42,6 +42,11 @@
       color: var(--text-light);
       min-height: 100vh;
       letter-spacing: 0.16em;
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), auto !important;
+    }
+    
+    * {
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), auto !important;
     }
 
     /* ----------- HERO ----------- */
@@ -112,7 +117,7 @@
       font-size: 13px;
       border: none;
       background: transparent;
-      cursor: pointer;
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), pointer !important;
       text-decoration: none;
       color: rgba(255,255,255,0.9);
       transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
@@ -196,7 +201,7 @@
       border: 1px solid rgba(255,255,255,0.3);
       text-transform: uppercase;
       font-size: 13px;
-      cursor: pointer;
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), pointer !important;
       background: linear-gradient(135deg, var(--accent) 0%, #ff6b5e 40%, #ff3b3f 100%);
       color: #fff;
       box-shadow:
@@ -649,6 +654,27 @@
       transform: scale(1.04);
     }
 
+    /* ----------- REVEAL AU SCROLL ----------- */
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     /* ----------- SECTION LIVRAISON ----------- */
 
     .delivery-section {
@@ -796,38 +822,127 @@
       box-shadow: 0 16px 34px rgba(0,0,0,0.95);
     }
 
-    .flyer-wrapper {
+    .contact-locations {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px 32px;
+    }
+
+    .location-card {
+      padding: 24px 26px 22px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255,59,63,0.05), rgba(0,0,0,0.98));
+      border: 2px solid rgba(255,59,63,0.35);
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.95),
+        0 0 0 1px rgba(255,59,63,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
       position: relative;
-      margin-top: 26px;
-      border-radius: 16px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: #111;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
     }
 
-    .flyer-embed {
-      width: 100%;
-      height: 420px;
-      border: none;
-      display: block;
+    .location-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--accent) 20%,
+        var(--accent) 80%,
+        transparent 100%
+      );
+      opacity: 0.7;
     }
 
-    .flyer-link {
-      display: block;
-      padding: 10px 16px;
-      font-size: 11px;
-      letter-spacing: 0.16em;
+    .location-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,59,63,0.6);
+      box-shadow:
+        0 28px 70px rgba(0,0,0,0.95),
+        0 0 0 1px rgba(255,59,63,0.3),
+        0 0 40px rgba(255,59,63,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .location-title {
+      font-size: 16px;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      text-align: center;
+      margin-bottom: 8px;
       color: var(--accent);
-      text-decoration: none;
-      background: rgba(0,0,0,0.9);
+      font-weight: 500;
+      text-shadow: 0 2px 8px rgba(255,59,63,0.4);
     }
 
-    .flyer-link:hover {
-      color: #ffffff;
-      background: var(--accent);
+    .location-text {
+      text-transform: none;
+      letter-spacing: 0.06em;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+
+    .location-map {
+      margin-top: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid rgba(255,59,63,0.4);
+      box-shadow: 
+        0 16px 40px rgba(0,0,0,0.95),
+        0 0 20px rgba(255,59,63,0.2),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .location-card:hover .location-map {
+      border-color: rgba(255,59,63,0.7);
+      box-shadow: 
+        0 20px 50px rgba(0,0,0,0.95),
+        0 0 30px rgba(255,59,63,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+      display: block;
+      filter: brightness(0.85) contrast(1.1) saturate(0.8);
+      transition: filter 0.3s ease;
+    }
+
+    .location-card:hover .location-map iframe {
+      filter: brightness(0.95) contrast(1.05) saturate(1);
+    }
+
+    /* Marqueur samouraï custom */
+    .location-map::after {
+      content: '🥷';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      font-size: 42px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.9)) 
+              drop-shadow(0 0 8px rgba(255,59,63,0.8));
+      pointer-events: none;
+      z-index: 10;
+      animation: markerBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes markerBounce {
+      0%, 100% {
+        transform: translate(-50%, -100%) translateY(0);
+      }
+      50% {
+        transform: translate(-50%, -100%) translateY(-8px);
+      }
     }
 
     footer {
@@ -982,6 +1097,73 @@
         padding-inline: 6vw;
       }
     }
+
+    /* ========== EFFET SLASH D'ÉPÉE ========== */
+    .sword-slash {
+      position: absolute;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.9) 10%,
+        rgba(255,59,63,1) 50%,
+        rgba(255,255,255,0.9) 90%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 99999;
+      box-shadow: 
+        0 0 10px rgba(255,59,63,0.8),
+        0 0 20px rgba(255,59,63,0.6),
+        0 0 30px rgba(255,59,63,0.4);
+      filter: blur(0.5px);
+      transform-origin: center;
+      transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  opacity 0.3s ease-out 0.15s;
+      opacity: 1;
+    }
+
+    .sword-slash::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.3) 50%,
+        transparent 100%
+      );
+      filter: blur(2px);
+    }
+
+    .sword-slash::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, 
+        rgba(255,59,63,0.8) 0%,
+        rgba(255,255,255,0.6) 30%,
+        transparent 70%
+      );
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: sparkBurst 0.4s ease-out;
+    }
+
+    @keyframes sparkBurst {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1015,7 +1197,7 @@
 
   <!-- CONTENU -->
   <main>
-    <section id="sushis" class="sushis-section">
+    <section id="sushis" class="sushis-section reveal-on-scroll">
       <div class="sushis-layout">
         <div class="sushis-image-wrap">
           <img src="assets/final.jpg" alt="Assortiment de sushis sur ardoise" class="sushis-image">
@@ -1037,7 +1219,7 @@
       </div>
     </section>
 
-    <section id="woks" class="wok-section">
+    <section id="woks" class="wok-section reveal-on-scroll">
       <div class="wok-layout">
         <div class="wok-image-wrap">
           <img src="wock.jpg" alt="Wok de nouilles et légumes" class="wok-image">
@@ -1060,10 +1242,10 @@
       </div>
     </section>
 
-    <section id="healthy" class="healthy-section">
+    <section id="healthy" class="healthy-section reveal-on-scroll">
       <div class="healthy-layout">
         <div class="healthy-image-wrap">
-          <img src="assets/healthy.jpg" alt="Salade healthy et entrées fraîches" class="healthy-image">
+          <img src="assets/home2-3.jpg" alt="Salade healthy et entrées fraîches" class="healthy-image">
         </div>
         <div class="healthy-content">
           <h2 class="healthy-title">Healthy</h2>
@@ -1084,7 +1266,7 @@
       </div>
     </section>
 
-    <section id="plats">
+    <section id="plats" class="reveal-on-scroll">
       <h2>Nos plats</h2>
       <p>
         Une sélection de sushis, makis et grillades japonaises préparés à la minute, avec des produits
@@ -1118,7 +1300,7 @@
       </div>
     </section>
 
-    <section id="livraison" class="delivery-section">
+    <section id="livraison" class="delivery-section reveal-on-scroll">
       <div class="delivery-grid">
         <article class="delivery-card">
           <h3 class="delivery-card-title">Horaires d’ouverture</h3>
@@ -1155,7 +1337,7 @@
       </div>
     </section>
 
-    <section id="carte">
+    <section id="carte" class="reveal-on-scroll">
       <h2>La carte</h2>
       <p>
         California rolls et créations signatures, servis par 6 ou 8 pièces, avec des recettes
@@ -1266,7 +1448,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal-on-scroll">
       <h2>Contact</h2>
       <p>
         Réserve ta table ou commande à emporter en quelques instants : l’équipe Samurai te répond tous les
@@ -1274,38 +1456,51 @@
       </p>
       <div class="section-grid">
         <div class="section-block">
-          <h3 class="section-subtitle">Adresse</h3>
-          <p>
-            12, rue du Sakura — 75000 Paris<br>
-            Quartier animé, accès métro et parking à proximité.
-          </p>
-        </div>
-        <div class="section-block">
-          <h3 class="section-subtitle">Horaires</h3>
-          <p>
-            Lundi au dimanche : 11h30 – 14h30 &amp; 18h30 – 23h00.<br>
-            Service continu le week-end et veilles de jours fériés.
-          </p>
-        </div>
-        <div class="section-block">
           <h3 class="section-subtitle">Réservations</h3>
           <p>
             Téléphone : 01 23 45 67 89<br>
             Pour les groupes et événements, contacte-nous la veille pour une organisation sur mesure.
           </p>
         </div>
+        <div class="section-block">
+          <h3 class="section-subtitle">Horaires généraux</h3>
+          <p>
+            Service midi et soir selon les jours, en salle, à emporter et en livraison rapide sur Toulouse.
+          </p>
+        </div>
       </div>
 
-      <div class="flyer-wrapper">
-        <object class="flyer-embed" data="assets/MiniFlyer.pdf" type="application/pdf">
-          <p>
-            Ton navigateur ne peut pas afficher le flyer.
-            <a href="assets/MiniFlyer.pdf" target="_blank" rel="noopener">Ouvrir le flyer en plein écran</a>
+      <div class="contact-locations">
+        <article class="location-card">
+          <h3 class="location-title">Samurai — Point de vente 1</h3>
+          <p class="location-text">
+            12, rue du Sakura — 75000 Paris<br>
+            Quartier animé, accès métro et parking à proximité.
           </p>
-        </object>
-        <a href="assets/MiniFlyer.pdf" target="_blank" rel="noopener" class="flyer-link">
-          Voir le flyer complet (PDF)
-        </a>
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10500.123456789!2d2.3522219!3d48.856614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzIzLjgiTiAywrAyMScwOC4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+        <article class="location-card">
+          <h3 class="location-title">Samurai — Point de vente 2</h3>
+          <p class="location-text">
+            Adresse du deuxième restaurant à renseigner ici<br>
+            Indique l'accès, le quartier et les infos pratiques.
+          </p>
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.123456789!2d1.4442469!3d43.604652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM2JzE2LjciTiAxwrAyNiczOS4zIkU!5e0!3m2!1sfr!2sfr!4v1234567891"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -1374,6 +1569,140 @@
 
     window.addEventListener("scroll", setActiveLink);
     window.addEventListener("load", setActiveLink);
+
+    // Effet de reveal au scroll pour les sections
+    const revealEls = document.querySelectorAll(".reveal-on-scroll");
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      // Fallback anciens navigateurs
+      revealEls.forEach(el => el.classList.add("is-visible"));
+    }
+
+    // ========== CRÉATION DU CONTEXTE AUDIO ==========
+    let audioContext = null;
+    
+    // Fonction pour jouer le son d'épée
+    function playSwordSound() {
+      try {
+        // Créer le contexte audio à la première interaction
+        if (!audioContext) {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        const now = audioContext.currentTime;
+        const duration = 0.18;
+        
+        // ===== 1. Créer le "swoosh" de l'air =====
+        const bufferSize = audioContext.sampleRate * duration;
+        const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+        const data = buffer.getChannelData(0);
+        
+        // Générer du bruit blanc
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        
+        const noiseSource = audioContext.createBufferSource();
+        noiseSource.buffer = buffer;
+        
+        // Filtre passe-bande pour le "swoosh"
+        const swooshFilter = audioContext.createBiquadFilter();
+        swooshFilter.type = 'bandpass';
+        swooshFilter.frequency.setValueAtTime(2000, now);
+        swooshFilter.frequency.exponentialRampToValueAtTime(500, now + duration);
+        swooshFilter.Q.setValueAtTime(3, now);
+        
+        const swooshGain = audioContext.createGain();
+        swooshGain.gain.setValueAtTime(0, now);
+        swooshGain.gain.linearRampToValueAtTime(0.08, now + 0.015);
+        swooshGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+        
+        // ===== 2. Créer le son métallique =====
+        const metalOsc = audioContext.createOscillator();
+        metalOsc.type = 'sawtooth';
+        metalOsc.frequency.setValueAtTime(1200, now);
+        metalOsc.frequency.exponentialRampToValueAtTime(400, now + 0.08);
+        
+        const metalFilter = audioContext.createBiquadFilter();
+        metalFilter.type = 'highpass';
+        metalFilter.frequency.setValueAtTime(800, now);
+        
+        const metalGain = audioContext.createGain();
+        metalGain.gain.setValueAtTime(0, now);
+        metalGain.gain.linearRampToValueAtTime(0.04, now + 0.01);
+        metalGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        
+        // ===== Connecter tout =====
+        noiseSource.connect(swooshFilter);
+        swooshFilter.connect(swooshGain);
+        swooshGain.connect(audioContext.destination);
+        
+        metalOsc.connect(metalFilter);
+        metalFilter.connect(metalGain);
+        metalGain.connect(audioContext.destination);
+        
+        // ===== Jouer les sons =====
+        noiseSource.start(now);
+        noiseSource.stop(now + duration);
+        metalOsc.start(now);
+        metalOsc.stop(now + 0.12);
+        
+      } catch (error) {
+        // Ignorer les erreurs audio (navigateurs sans support)
+        console.log('Audio non disponible');
+      }
+    }
+
+    // ========== EFFET SLASH D'ÉPÉE AU CLIC ==========
+    document.addEventListener('click', function(e) {
+      // Jouer le son d'épée
+      playSwordSound();
+      
+      // Créer l'élément slash
+      const slash = document.createElement('div');
+      slash.className = 'sword-slash';
+      
+      // Position au clic
+      slash.style.left = e.pageX + 'px';
+      slash.style.top = e.pageY + 'px';
+      
+      // Rotation aléatoire pour plus de variété (-60° à +60°)
+      const randomRotation = Math.random() * 120 - 60;
+      slash.style.transform = `translate(-50%, -50%) rotate(${randomRotation}deg) scaleX(0)`;
+      
+      document.body.appendChild(slash);
+      
+      // Lancer l'animation du slash
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          slash.style.transform = `translate(-50%, -50%) rotate(${randomRotation}deg) scaleX(1)`;
+        });
+      });
+      
+      // Faire disparaître progressivement
+      setTimeout(() => {
+        slash.style.opacity = '0';
+      }, 150);
+      
+      // Supprimer après l'animation
+      setTimeout(() => {
+        slash.remove();
+      }, 500);
+    });
   </script>
 </body>
 </html>
