@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Pages principales
+Allow: /index.html
+Allow: /sushi-toulouse.html
+Allow: /restaurant-japonais-toulouse.html
+Allow: /livraison-sushi-toulouse.html
+Allow: /california-roll-toulouse.html
+Allow: /menu-sushi-toulouse.html
+Allow: /mentions-legales.html
+
+# Sitemap
+Sitemap: https://www.samuraisushi-toulouse.fr/sitemap.xml
+
+# Assets
+Allow: /assets/
+
+# Crawl-delay
+Crawl-delay: 1
+
