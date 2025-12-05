@@ -1668,7 +1668,7 @@
     }
 
     // ========== EFFET SLASH D'ÉPÉE AU CLIC ==========
-    document.addEventListener('click', function(e) {
+    function createSwordSlash(x, y) {
       // Jouer le son d'épée
       playSwordSound();
       
@@ -1676,9 +1676,9 @@
       const slash = document.createElement('div');
       slash.className = 'sword-slash';
       
-      // Position au clic
-      slash.style.left = e.pageX + 'px';
-      slash.style.top = e.pageY + 'px';
+      // Position au clic/touch
+      slash.style.left = x + 'px';
+      slash.style.top = y + 'px';
       
       // Rotation aléatoire pour plus de variété (-60° à +60°)
       const randomRotation = Math.random() * 120 - 60;
@@ -1702,7 +1702,21 @@
       setTimeout(() => {
         slash.remove();
       }, 500);
+    }
+
+    // Gestion du clic souris (desktop)
+    document.addEventListener('click', function(e) {
+      createSwordSlash(e.pageX, e.pageY);
     });
+
+    // Gestion du toucher (mobile/tablette)
+    document.addEventListener('touchstart', function(e) {
+      // Empêcher le scroll pendant le toucher pour un meilleur effet
+      const touch = e.touches[0];
+      const x = touch.pageX;
+      const y = touch.pageY;
+      createSwordSlash(x, y);
+    }, { passive: true });
   </script>
 </body>
 </html>
