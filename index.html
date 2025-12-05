@@ -16,14 +16,14 @@
   <meta property="og:url" content="https://www.samuraisushi-toulouse.fr/">
   <meta property="og:title" content="Restaurant Sushi Toulouse - Samurai Sushi & Grill">
   <meta property="og:description" content="Meilleur restaurant de sushi à Toulouse. Livraison rapide, à emporter. Cuisine japonaise authentique.">
-  <meta property="og:image" content="https://www.samuraisushi-toulouse.fr/assets/final.jpg">
+  <meta property="og:image" content="https://www.samuraisushi-toulouse.fr/assets/restaurant.png">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.samuraisushi-toulouse.fr/">
   <meta property="twitter:title" content="Restaurant Sushi Toulouse - Samurai Sushi & Grill">
   <meta property="twitter:description" content="Meilleur restaurant de sushi à Toulouse. Livraison rapide, à emporter.">
-  <meta property="twitter:image" content="https://www.samuraisushi-toulouse.fr/assets/final.jpg">
+  <meta property="twitter:image" content="https://www.samuraisushi-toulouse.fr/assets/restaurant.png">
   
   <!-- Schema.org pour Google -->
   <script type="application/ld+json">
@@ -31,7 +31,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Samurai Sushi & Grill",
-    "image": "https://www.samuraisushi-toulouse.fr/assets/final.jpg",
+    "image": "https://www.samuraisushi-toulouse.fr/assets/restaurant.png",
     "description": "Restaurant de sushi et cuisine japonaise à Toulouse avec livraison rapide et service à emporter",
     "servesCuisine": ["Japonaise", "Sushi", "Asiatique"],
     "priceRange": "€€",
@@ -1342,6 +1342,24 @@
         width: 28px;
         height: 28px;
       }
+
+      #accueil-restaurant > div {
+        flex-direction: column !important;
+      }
+
+      #accueil-restaurant h2 {
+        font-size: 28px !important;
+        letter-spacing: 0.2em !important;
+      }
+
+      #accueil-restaurant p {
+        font-size: 14px !important;
+      }
+
+      #accueil-restaurant > div > div:first-child {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+      }
     }
 
     @media (max-width: 700px) {
@@ -1418,6 +1436,15 @@
       .social-icon svg {
         width: 24px;
         height: 24px;
+      }
+
+      #accueil-restaurant h2 {
+        font-size: 24px !important;
+        letter-spacing: 0.15em !important;
+      }
+
+      #accueil-restaurant p {
+        font-size: 13px !important;
       }
     }
 
@@ -1605,7 +1632,7 @@
           </p>
         </div>
         <div class="section-block">
-          <img src="assets/final.jpg" alt="Grillades japonaises et yakitoris" class="plats-image">
+          <img src="assets/restaurant.png" alt="Intérieur du restaurant Samurai" class="plats-image">
           <h3 class="section-subtitle">Grillades &amp; Yakitoris</h3>
           <p>
             Brochettes de bœuf, poulet teriyaki, saumon mariné et légumes grillés, à accompagner de riz
@@ -1877,6 +1904,28 @@
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="accueil-restaurant" class="reveal-on-scroll" style="max-width: 1200px; margin: 0 auto 72px; padding: 60px 0 30px; border-radius: 0; background: transparent; border: none; box-shadow: none;">
+      <div style="display: flex; gap: 48px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 0 0 400px; min-width: 300px;">
+          <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.95), 0 0 0 3px rgba(255,59,63,0.4), 0 0 50px rgba(255,59,63,0.3);">
+            <img src="assets/restaurant.png" alt="Intérieur du restaurant Samurai Sushi & Grill" style="width: 100%; height: auto; display: block;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%); pointer-events: none;"></div>
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h2 style="font-size: 36px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 20px; text-shadow: 0 0 30px rgba(255,59,63,0.6);">
+            Prêts à vous accueillir
+          </h2>
+          <p style="font-size: 15px; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 16px;">
+            Découvrez nos espaces modernes inspirés des bars à sushis de Tokyo. Une ambiance chaleureuse et authentique pour une expérience culinaire inoubliable.
+          </p>
+          <p style="font-size: 15px; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); line-height: 1.8;">
+            Que ce soit pour un déjeuner rapide, un dîner romantique ou un repas entre amis, notre équipe vous accueille dans un cadre élégant où tradition japonaise et modernité se rencontrent.
+          </p>
+        </div>
       </div>
     </section>
   </main>
