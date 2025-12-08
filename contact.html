@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Samurai Sushi & Grill Toulouse</title>
+  <meta name="description" content="Contactez Samurai Sushi & Grill à Toulouse. Réservations, questions, suggestions. Nous sommes à votre écoute !">
+  <meta name="keywords" content="contact sushi toulouse, réservation restaurant japonais, samurai sushi contact">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/ninja.png">
+  <link rel="canonical" href="https://www.samuraisushi-toulouse.fr/contact.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.samuraisushi-toulouse.fr/contact.html">
+  <meta property="og:title" content="Contact - Samurai Sushi & Grill">
+  <meta property="og:description" content="Contactez-nous pour vos réservations et questions">
+  <meta property="og:image" content="https://www.samuraisushi-toulouse.fr/assets/restaurant.png">
+  
+  <!-- Police style "Samurai" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: "Samurai Logo";
+      src: url("assets/go3v2.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #ff3b3f;
+      --accent-dark: #c51e25;
+      --bg-dark: #08070a;
+      --bg-elevated: rgba(8,7,10,0.94);
+      --text-light: #ffffff;
+      --text-muted: rgba(255,255,255,0.7);
+      --nav-bg: rgba(8,7,10,0.9);
+      --nav-border: #ff3b3f;
+    }
+
+    body {
+      font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #202020;
+      color: var(--text-light);
+      min-height: 100vh;
+      letter-spacing: 0.16em;
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), auto !important;
+    }
+    
+    * {
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), auto !important;
+    }
+
+    /* ----------- HERO ----------- */
+    .hero {
+      position: relative;
+      min-height: 50vh;
+      background-image: url("assets/final.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 5vw 40px;
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    /* ----------- NAVBAR ----------- */
+    .navbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(16px);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      color: var(--text-light);
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(255,59,63,0.9);
+    }
+
+    .nav-box {
+      display: flex;
+      align-items: stretch;
+      background: var(--nav-bg);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-link,
+    .btn-nav-main {
+      padding: 16px 38px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 13px;
+      border: none;
+      background: transparent;
+      cursor: url("assets/Katana Sword & Samurai Helmet 3D--cursor--SweezyCursors..cur"), pointer !important;
+      text-decoration: none;
+      color: rgba(255,255,255,0.9);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(255,59,63,0.6);
+    }
+
+    .btn-nav-main {
+      background: var(--accent);
+      color: var(--text-light);
+      border-left: 1px solid rgba(255,255,255,0.2);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .btn-nav-main:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(255,59,63,0.8);
+    }
+
+    /* ----------- HERO CONTENT ----------- */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4vh;
+      text-align: center;
+    }
+
+    .page-title {
+      font-family: "Samurai Logo", "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(60px, 10vw, 120px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow:
+        0 0 16px rgba(0,0,0,0.85),
+        0 12px 26px rgba(0,0,0,0.95);
+    }
+
+    .page-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+    }
+
+    /* ----------- MAIN CONTENT ----------- */
+    main {
+      background: #202020;
+      color: #eee;
+      padding: 56px 5vw 96px;
+    }
+
+    .contact-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 28px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(0,0,0,0.9));
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow:
+        0 22px 60px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,255,255,0.15);
+    }
+
+    .contact-section h2 {
+      position: relative;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      font-size: 30px;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .contact-section h2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 80px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .form-container {
+      margin-top: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ffffff;
+      min-height: 600px;
+    }
+
+    .form-container iframe {
+      display: block;
+      border: none;
+      width: 100%;
+      min-height: 600px;
+    }
+
+    /* ----------- RESPONSIVE ----------- */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-box {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .nav-link,
+      .btn-nav-main {
+        padding: 14px 20px;
+        text-align: center;
+        border-left: none !important;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .hero {
+        min-height: 40vh;
+      }
+
+      .page-title {
+        font-size: clamp(50px, 12vw, 80px);
+        letter-spacing: 0.25em;
+      }
+
+      .contact-section {
+        padding: 28px 20px;
+      }
+
+      .form-container {
+        min-height: 700px;
+      }
+
+      .form-container iframe {
+        min-height: 700px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: clamp(40px, 13vw, 70px);
+        letter-spacing: 0.18em;
+      }
+
+      .page-subtitle {
+        font-size: 16px;
+      }
+
+      main {
+        padding: 40px 4vw 60px;
+      }
+
+      .contact-section h2 {
+        font-size: 24px;
+      }
+    }
+
+    /* ========== EFFET SLASH D'ÉPÉE ========== */
+    .sword-slash {
+      position: absolute;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.9) 10%,
+        rgba(255,59,63,1) 50%,
+        rgba(255,255,255,0.9) 90%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 99999;
+      box-shadow: 
+        0 0 10px rgba(255,59,63,0.8),
+        0 0 20px rgba(255,59,63,0.6),
+        0 0 30px rgba(255,59,63,0.4);
+      filter: blur(0.5px);
+      transform-origin: center;
+      transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  opacity 0.3s ease-out 0.15s;
+      opacity: 1;
+    }
+
+    .sword-slash::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.3) 50%,
+        transparent 100%
+      );
+      filter: blur(2px);
+    }
+
+    .sword-slash::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, 
+        rgba(255,59,63,0.8) 0%,
+        rgba(255,255,255,0.6) 30%,
+        transparent 70%
+      );
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: sparkBurst 0.4s ease-out;
+    }
+
+    @keyframes sparkBurst {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="navbar">
+      <a href="index.html" class="logo-mark">
+        <span class="logo-dot"></span>
+        <span>Samurai Sushi</span>
+      </a>
+      <div class="nav-box">
+        <a href="index.html#accueil" class="nav-link">Accueil</a>
+        <a href="index.html#plats" class="nav-link">Plats</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="index.html#carte" class="btn-nav-main">Voir la carte</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <h1 class="page-title">Contact</h1>
+      <p class="page-subtitle">Contactez-nous</p>
+    </div>
+  </header>
+
+  <!-- CONTENU -->
+  <main>
+    <div class="contact-section">
+      <h2>Envoyez-nous un message</h2>
+      
+      <div class="form-container">
+        <iframe 
+          src="https://tally.so/r/VLGl5y?transparentBackground=1"
+          width="100%"
+          height="600"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Formulaire de contact Samurai Sushi">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ========== SON D'ÉPÉE (Web Audio API) ==========
+    let audioContext = null;
+
+    function playSwordSound() {
+      try {
+        if (!audioContext) {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        const now = audioContext.currentTime;
+        const duration = 0.18;
+        
+        // ===== Son de "swoosh" (bruit blanc filtré) =====
+        const bufferSize = audioContext.sampleRate * duration;
+        const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        
+        for (let i = 0; i < bufferSize; i++) {
+          output[i] = Math.random() * 2 - 1;
+        }
+        
+        const noiseSource = audioContext.createBufferSource();
+        noiseSource.buffer = noiseBuffer;
+        
+        const noiseFilter = audioContext.createBiquadFilter();
+        noiseFilter.type = 'bandpass';
+        noiseFilter.frequency.setValueAtTime(2800, now);
+        noiseFilter.frequency.exponentialRampToValueAtTime(800, now + duration);
+        noiseFilter.Q.value = 1.2;
+        
+        const noiseGain = audioContext.createGain();
+        noiseGain.gain.setValueAtTime(0.25, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.01, now + duration);
+        
+        noiseSource.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(audioContext.destination);
+        
+        // ===== Son métallique (oscillateur) =====
+        const metalOsc = audioContext.createOscillator();
+        metalOsc.type = 'sine';
+        metalOsc.frequency.setValueAtTime(1600, now);
+        metalOsc.frequency.exponentialRampToValueAtTime(400, now + 0.12);
+        
+        const metalFilter = audioContext.createBiquadFilter();
+        metalFilter.type = 'highpass';
+        metalFilter.frequency.value = 1200;
+        
+        const metalGain = audioContext.createGain();
+        metalGain.gain.setValueAtTime(0.15, now);
+        metalGain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+        
+        metalOsc.connect(metalFilter);
+        metalFilter.connect(metalGain);
+        metalGain.connect(audioContext.destination);
+        
+        // ===== Jouer les sons =====
+        noiseSource.start(now);
+        noiseSource.stop(now + duration);
+        metalOsc.start(now);
+        metalOsc.stop(now + 0.12);
+        
+      } catch (error) {
+        console.log('Audio non disponible');
+      }
+    }
+
+    // ========== EFFET SLASH D'ÉPÉE AU CLIC ==========
+    function createSwordSlash(x, y) {
+      playSwordSound();
+      
+      const slash = document.createElement('div');
+      slash.className = 'sword-slash';
+      
+      slash.style.left = x + 'px';
+      slash.style.top = y + 'px';
+      
+      const randomRotation = Math.random() * 120 - 60;
+      slash.style.transform = `translate(-50%, -50%) rotate(${randomRotation}deg) scaleX(0)`;
+      
+      document.body.appendChild(slash);
+      
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          slash.style.transform = `translate(-50%, -50%) rotate(${randomRotation}deg) scaleX(1)`;
+        });
+      });
+      
+      setTimeout(() => {
+        slash.style.opacity = '0';
+      }, 150);
+      
+      setTimeout(() => {
+        slash.remove();
+      }, 500);
+    }
+
+    document.addEventListener('click', function(e) {
+      createSwordSlash(e.pageX, e.pageY);
+    });
+
+    document.addEventListener('touchstart', function(e) {
+      const touch = e.touches[0];
+      const x = touch.pageX;
+      const y = touch.pageY;
+      createSwordSlash(x, y);
+    }, { passive: true });
+  </script>
+</body>
+</html>
+
